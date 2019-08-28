@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "build:watch": "tsc -p tsconfig.json --watch"
+    "build:watch": "tsc -p tsconfig.json --watch",
+    "schema": "tsc ./src/test/index.ts && ng generate .:test && rimraf ./src/test/index.js"
   },
   "keywords": [
     "schematics"
@@ -18,7 +19,12 @@
     "@angular-devkit/schematics": "^8.3.0",
     "@types/jasmine": "^3.3.9",
     "@types/node": "^8.0.31",
+    "inquirer-directory": "^2.2.0",
     "jasmine": "^3.3.1",
     "typescript": "~3.5.3"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.3.0"
   }
 }

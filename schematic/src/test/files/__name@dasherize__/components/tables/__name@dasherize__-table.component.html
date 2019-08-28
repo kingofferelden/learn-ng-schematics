@@ -1,0 +1,10 @@
+<ngx-table-builder #table [source]="data">
+    <ngx-empty><not-found></not-found></ngx-empty>
+
+    <ngx-column *ngFor="let key of table.modelColumnKeys" [key]="key">
+        <ng-template ngx-th> {{ key | translate }} </ng-template>
+    </ngx-column>
+
+    <ngx-context-menu [height]="null">
+    </ngx-context-menu>
+</ngx-table-builder>
